@@ -389,3 +389,18 @@ useEffect(() => {
 # Higher Order Components
 - HoC's can be used to wrap components to then add additional logic to them
 - By convention HoC classes are prefixed with `With`, e.g. `WithClasses.js`
+
+
+# Reaching out to the Web (http / Ajax):
+
+- A package called `axios` can be used to create http requests. It does this asynchronously.
+- Javascript is a sequential programming language
+- As a result, using `axios` is often used with 'Promises' which allow execution of a function once the asynchronous event has finished executing. Normally Javascript would just move onto the next line and forget about the fact the async task is going on in the background
+
+- A promise can be written like this:
+```js
+const posts = axios.get('https://jsonplaceholder.typicode.com/posts')
+  .then(response => {
+      console.log(response);
+  });
+```
